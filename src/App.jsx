@@ -3,6 +3,9 @@ import { HandLandmarker, FilesetResolver } from "@mediapipe/tasks-vision";
 import Webcam from "react-webcam";
 import Hands from "./component/Hands.jsx";
 import Coordinates from "./component/Coordinates.jsx";
+import Knn from "./component/Knn.jsx";
+
+
 
 const videoConstraints = {
     width: 480,
@@ -61,7 +64,7 @@ export default function App() {
 
     return (
         <section className="videosection">
-            <canvas ref={canvasRef} width="480" height="270"></canvas>
+
             <Webcam
                 width="480"
                 height="270"
@@ -71,10 +74,10 @@ export default function App() {
                 videoConstraints={videoConstraints}
                 ref={webcamRef}
             />
-
-
+            <canvas ref={canvasRef} width="480" height="270"></canvas>
             <Coordinates poseData={poseData}/>
             <Hands poseData={poseData}/>
+            <Knn></Knn>
         </section>
     );
 }

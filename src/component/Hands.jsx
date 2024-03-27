@@ -4,7 +4,6 @@ import { DrawingUtils } from "@mediapipe/tasks-vision";
 function Hands({ poseData }) {
     const canvasRef = useRef(null);
     const drawingUtilsRef = useRef(null);
-
     const [drawingUtils, setDrawingUtils] = useState({});
 
     useEffect(() => {
