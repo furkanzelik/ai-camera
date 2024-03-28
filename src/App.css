@@ -1,14 +1,13 @@
-
 .videosection {
-  background-color: rgb(70, 70, 70);
-  height:270px;
+    background-color: rgb(70, 70, 70);
+    height:570px;
 }
 
 .videosection video {
-  position: absolute;
+    position: absolute;
 }
 
 .videosection canvas {
-  position: absolute;
-  transform: rotateY(180deg);
+    position: absolute;
+    transform: rotateY(180deg);
 }

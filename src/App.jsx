@@ -63,6 +63,8 @@ export default function App() {
     }, [poseData]);
 
     return (
+        <>
+
         <section className="videosection">
 
             <Webcam
@@ -75,9 +77,18 @@ export default function App() {
                 ref={webcamRef}
             />
             <canvas ref={canvasRef} width="480" height="270"></canvas>
+            <div className='Coordinates'>
             <Coordinates poseData={poseData}/>
-            <Hands poseData={poseData}/>
-            <Knn></Knn>
+            </div>
         </section>
+
+            <div className='Hands'>
+    <Hands poseData={poseData}/>
+            </div>
+
+      <div className='Knn'>
+    <Knn ></Knn>
+      </div>
+        </>
     );
 }
