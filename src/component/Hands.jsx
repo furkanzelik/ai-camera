@@ -40,7 +40,7 @@ function Hands({ poseData }) {
     }, [poseData, drawingUtilsRef.current]);
 
     return (
-        <canvas ref={canvasRef} width="480" height="270"></canvas>
+        <canvas className="overlap" ref={canvasRef} width="480" height="270"></canvas>
     );
 }
 

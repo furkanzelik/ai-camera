@@ -1,13 +1,39 @@
-.videosection {
-    background-color: rgb(70, 70, 70);
-    height:570px;
+/*.videosection {*/
+/*    position: absolute;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    text-align: center;*/
+/*    z-index: 9;*/
+/*    width: 480px;*/
+/*    height: 360px;*/
+
+/*}*/
+.overlap {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 9;
+    width: 480px;
+    height: 360px;
 }
 
-.videosection video {
-    position: absolute;
-}
+/*.videosection video {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: 1;*/
 
-.videosection canvas {
-    position: absolute;
-    transform: rotateY(180deg);
-}
+/*}*/
+
+/*.videosection canvas {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: 2;*/
+/*    transform: rotateY(180deg);*/
+/*}*/

@@ -64,31 +64,28 @@ export default function App() {
 
     return (
         <>
-
-        <section className="videosection">
-
-            <Webcam
-                width="480"
-                height="270"
-                mirrored
-                id="webcam"
-                audio={false}
-                videoConstraints={videoConstraints}
-                ref={webcamRef}
-            />
-            <canvas ref={canvasRef} width="480" height="270"></canvas>
+            <div className='Knn'>
+                <Knn></Knn>
+            </div>
+            <div className='Hands'></div>
             <div className='Coordinates'>
-            <Coordinates poseData={poseData}/>
-            </div>
-        </section>
-
-            <div className='Hands'>
-    <Hands poseData={poseData}/>
+                <Coordinates poseData={poseData}/>
             </div>
 
-      <div className='Knn'>
-    <Knn ></Knn>
-      </div>
+            <section className="videosection">
+
+                <Webcam
+                    className="overlap"
+                    width="480"
+                    height="270"
+                    mirrored
+                    id="webcam"
+                    audio={false}
+                    videoConstraints={videoConstraints}
+                    ref={webcamRef}
+                />
+                <Hands poseData={poseData}/>
+            </section>
         </>
     );
 }
