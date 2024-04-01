@@ -1,0 +1,3 @@
+.canvas-element {
+    z-index: 1; /* Ensure canvas appears below video */
+}

@@ -68,16 +68,7 @@ button:focus-visible {
 }
 
 
-.videosection {
-  background-color: rgb(70, 70, 70);
-  height:570px;
 
-}
-
-.videosection video {
-  position: absolute;
-  margin-left: 50%;
-}
 
 .videosection canvas {
   position: absolute;
@@ -85,13 +76,5 @@ button:focus-visible {
 }
 
 
-.Hands{
-  position: absolute;
-  transform: rotateY(180deg);
-}
 
-.Knn {
-  margin-top: 10%;
-  margin-left: 50%;
-}
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { DrawingUtils } from "@mediapipe/tasks-vision";
+import '../Hands.css';
 
 function Hands({ poseData }) {
     const canvasRef = useRef(null);
@@ -28,9 +29,10 @@ function Hands({ poseData }) {
 
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
+            // eslint-disable-next-line react/prop-types
             poseData.forEach((hand) => {
                 drawingUtilsRef.current.drawConnectors(hand, DrawingUtils.HAND_CONNECTIONS, {
-                    color: "green",
+                    color: "#AAFF00",
                 });
                 drawingUtilsRef.current.drawLandmarks(hand, {
                     radius:4 , color:'#FF0000' , lineWidth:2

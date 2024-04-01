@@ -19,6 +19,8 @@ export default function App() {
     const canvasRef = useRef(null);
     const landmarkerRef = useRef(null);
 
+
+
     // capture de webcam stream en ontvang posedata
     const capture = async () => {
         if (webcamRef.current && landmarkerRef.current && webcamRef.current.getCanvas()) {
@@ -58,19 +60,27 @@ export default function App() {
     useEffect(() => {
         if (poseData.length > 0) {
             const hand = poseData[0];
-            console.log(hand);
+            const simplifiedHand = hand.map(landmark => [landmark.x, landmark.y, landmark.z]).flat();
+            console.log(simplifiedHand);
         }
     }, [poseData]);
 
+    // const labeledData = poseData.map(hand => {
+    //     const simplifiedHand = hand.map(landmark => [landmark.x, landmark.y, landmark.z]).flat();
+    //     return {pose: simplifiedHand, label: "SHOOT"};
+    // });
+    //
+    // console.log(labeledData);
+
     return (
         <>
-            <div className='Knn'>
-                <Knn></Knn>
-            </div>
-            <div className='Hands'></div>
-            <div className='Coordinates'>
-                <Coordinates poseData={poseData}/>
-            </div>
+            {/*<div className='Knn'>*/}
+            {/*    <Knn></Knn>*/}
+            {/*</div>*/}
+            {/*<div className='Hands'></div>*/}
+            {/*<div className='Coordinates'>*/}
+            {/*    <Coordinates poseData={poseData}/>*/}
+            {/*</div>*/}
 
             <section className="videosection">
 
