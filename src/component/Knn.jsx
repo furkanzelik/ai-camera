@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import knn from 'knear'
 
- function Knn() {
+ function Knn(props) {
     const [prediction, setPrediction] = useState(undefined)
     const machine = useRef(new knn.kNear(3)) // of new kNear(3)
 
     const makePrediction = () => {
-        const result = machine.current.classify([3,5,4])
+        const result = machine.current.classify(props.postDataArray.map(landmark => [landmark.x, landmark.y]).flat())
         setPrediction(result)
     }
 

@@ -18,6 +18,8 @@ export default function App() {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
     const landmarkerRef = useRef(null);
+    const postDataArray = useState([]);
+    const [hand, setHand] = useState(null); // Define hand state
 
 
 
@@ -56,28 +58,25 @@ export default function App() {
         createHandLandmarker();
     }, []);
 
-    // Posedata: array van handen. Hand: array van landmarks. Landmark: object met x,y,z
+
     useEffect(() => {
         if (poseData.length > 0) {
-            const hand = poseData[0];
-            const simplifiedHand = hand.map(landmark => [landmark.x, landmark.y, landmark.z]).flat();
+            const handData = poseData[0]; // Extract hand pose data
+            setHand(handData); // Set hand state with the extracted data
+            const simplifiedHand = postDataArray[0];
             console.log(simplifiedHand);
         }
     }, [poseData]);
 
-    // const labeledData = poseData.map(hand => {
-    //     const simplifiedHand = hand.map(landmark => [landmark.x, landmark.y, landmark.z]).flat();
-    //     return {pose: simplifiedHand, label: "SHOOT"};
-    // });
-    //
-    // console.log(labeledData);
+    // hand.map(landmark => [landmark.x, landmark.y]).flat();
 
     return (
         <>
-            {/*<div className='Knn'>*/}
-            {/*    <Knn></Knn>*/}
-            {/*</div>*/}
-            {/*<div className='Hands'></div>*/}
+            <div className='Knn'>
+                <Knn postDataArray={postDataArray}></Knn>
+            </div>
+            <div className='Hands'></div>
+
             {/*<div className='Coordinates'>*/}
             {/*    <Coordinates poseData={poseData}/>*/}
             {/*</div>*/}

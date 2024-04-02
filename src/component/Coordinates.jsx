@@ -12,7 +12,7 @@ function Coordinates(pose) {
                         <ul>
                             {hand.map((landmark, j) => (
                                 <li key={j}>
-                                    {landmark.x}, {landmark.y}, {landmark.z}
+                                    {landmark.x}, {landmark.y}
                                 </li>
                             ))}
                         </ul>
